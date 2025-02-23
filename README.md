@@ -4,7 +4,7 @@ Several mini rust projects for learning the fundamentals of the language. Made w
 
 ### A crucial remark
 
-This IS NOT a rust project, simply a collection of notes and mini-projects I've made while learning rust. It is designed as a reference for myself (and perhaps others, though making your own is almost certainly better) and as such I am not going to be following any large-scale rust project conventions, even if this ends up containing a reasonable amount of code. 
+This is NOT a rust project, simply a collection of notes and mini-projects I've made while learning rust. It is designed as a reference for myself (and perhaps others, though making your own is almost certainly better) and as such I am not going to be following any large-scale rust project conventions, even if this ends up containing a reasonable amount of code. 
 
 ### Links
 
