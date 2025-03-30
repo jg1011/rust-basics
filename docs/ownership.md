@@ -236,7 +236,23 @@ If we reference to a nonexistent value, we have a dangling reference. These are 
 
 ### Slices
 
+For strings we can point to substrings, i.e. slices, in the usual kinda way. Uninteresting really and seen in other languages. We introduce these by solving the "find first word problem" for strings and motivate further by considering the "find k'th word problem". Consider the following solution 
 
+```
+fn first_word(s: &String) -> &str {
+    let bytes = s.as_bytes(); // Convert string to bytes
+
+    for (i, &item) in bytes.iter().enumerate() { // Enumerate through characters
+        if item == b' ' { // If character is space
+            return &s[0..i];
+        }
+    }
+
+    &s[..] // If no space detected, the whole string is one word!
+}
+```
+
+This logic generalises to e.g. arrays, but you know what slicing is so I won't elaborate. See sec4.3 for details. 
 
 
 
