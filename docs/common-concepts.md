@@ -4,7 +4,7 @@ Notes correspond to Ch3 in [the rust programming language](https://doc.rust-lang
 
 ### Variables and Mutability
 
-Variables are immutable by default, or safety purposes, but can be made mutable by adding keyword mut. e.g. 
+Variables are immutable by default, for safety purposes, but can be made mutable by adding keyword mut. e.g. 
 
 ```
 let x = 5; // immutable 
@@ -35,7 +35,7 @@ fn main() {
 }
 ```
 
-will take the immutable x=5, shadow it with an immutable x = x+1 (i.e. the original var + 1), again shadow it with an immutable x = x * 2 (i.e. the original var + 1 then * 2). On print 1, this final var will be the version of x in scope, on print 2, it will be x + 1 = 6. Note we define a new scope be inserting code into curly braces. 
+will take the immutable x=5, shadow it with an immutable x = x+1 (i.e. the original var + 1), again shadow it with an immutable x = x * 2 (i.e. the original var + 1 then * 2). On print 1, this final var will be the version of x in scope, 12, and on print 2 it will be x + 1 = 6. Note we define a new scope be inserting code into curly braces. 
 
 The key difference with mutability is that we need to assign with let when shadowing as we're creating something new. 
 
@@ -89,7 +89,6 @@ As with integers these come equipped with builtin operations. See [the table](ht
 
 --- Booleans ---
 
-
 As usual, these are just true / false and use one bit (It appears it takes a whole byte but docs seem unclear, should check this). See e.g.
 
 ```
@@ -104,7 +103,7 @@ Primitive alphabetic type, stores a char literal (whatever is in '') with 4 byte
 
 ```
 let c = 'z';
-let z: char = 'ℤ'; // with explicit type annotation
+let z: char = 'ℤ'; // with explicit type annotation (rust-analyzer gives type annotation by default)
 let heart_eyed_cat = '😻';
 ```
 
@@ -122,9 +121,7 @@ Groups together a fixed (once declared immutable) number of variables of perhaps
 let tup: (i32, f64, u8) = (500, 6.4, 1);
 let (x, y, z) = tup; // destructuring, lets x,y,z = first, second, third element of tup. 
 println!("The value of y is: {y}"); // prints 6.4
-```
-
-Note type declaration here was optional and just for instructive purposes. My IDE (vscode) does this for me anyway. 
+``` 
 
 Empty tuple () is called a unit. Expressions implicitly return this if they don't return anything else (python equivalent is probably None). 
 
